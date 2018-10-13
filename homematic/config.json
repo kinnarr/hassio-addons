@@ -1,9 +1,9 @@
 {
-  "name": "HomeMatic OCCU",
+  "name": "HomeMatic OCCU (Lan Gateway support)",
   "version": "2",
   "slug": "homematic",
   "description": "HomeMatic central based on OCCU",
-  "url": "https://home-assistant.io/addons/homematic/",
+  "url": "https://github.com/kinnarr/hassio-addons/tree/master/homematic",
   "arch": ["armhf", "i386", "amd64"],
   "startup": "system",
   "boot": "auto",
@@ -18,9 +18,9 @@
     "rf_enable": true,
     "rf": [
       {
-        "type": "CCU2",
-        "device": "/dev/ttyAMA0",
-        "reset": false
+        "type": "Lan Interface",
+        "serial": "xy",
+        "key": "abc"
       }
     ],
     "wired_enable": false,
@@ -36,9 +36,9 @@
     "rf_enable": "bool",
     "rf": [
       {
-        "type": "match(CCU2)",
-        "device": "match(^/dev/.*$)",
-        "reset": "bool?"
+        "type": "match(Lan Interface)",
+        "serial": "str",
+        "key": "str"
       }
     ],
     "wired_enable": "bool",

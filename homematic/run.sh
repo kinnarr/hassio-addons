@@ -18,14 +18,13 @@ if [ "$RF_ENABLE" == "true" ]; then
         TYPE=$(jq --raw-output ".rf[$i].type" $CONFIG_PATH)
 
         # Update config
-        if [ "$TYPE" == "CCU2" ]; then
+        if [ "$TYPE" == "Lan Interface" ]; then
             DEVICE=$(jq --raw-output ".rf[$i].device" $CONFIG_PATH)
             (
                 echo "[Interface $1]"
-                echo "Type = CCU2"
-                echo "ComPortFile = $DEVICE"
-                echo "AccessFile = /dev/null"
-                echo "ResetFile = /sys/class/gpio/gpio18/value"
+                echo "Type = Lan Interface"
+                echo "Serial Number = $SERIAL"
+                echo "Encryption Key = $KEY"
             ) >> /etc/config/rfd.conf
 
 
@@ -41,7 +40,7 @@ if [ "$RF_ENABLE" == "true" ]; then
             fi
             if [ "$RESET" == "true" ]; then
                 echo 1 > /sys/class/gpio/gpio18/value || echo "Can't reset module!"
-                sleep 0.5    
+                sleep 0.5
             fi
             echo 0 > /sys/class/gpio/gpio18/value || echo "Can't set default value!"
             sleep 0.5
