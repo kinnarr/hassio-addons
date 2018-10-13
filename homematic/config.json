@@ -7,8 +7,8 @@
   "arch": ["armhf", "i386", "amd64"],
   "startup": "system",
   "boot": "auto",
-  "auto_uart": true,
-  "gpio": true,
+  "auto_uart": false,
+  "gpio": false,
   "apparmor": false,
   "ports": {
     "2001/tcp": 2001,
@@ -50,5 +50,5 @@
       }
     ]
   },
-  "image": "homeassistant/{arch}-addon-homeassistant"
+  "image": "kinnarr/{arch}-addon-homeassistant"
 }
