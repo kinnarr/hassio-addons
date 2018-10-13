@@ -19,7 +19,8 @@ if [ "$RF_ENABLE" == "true" ]; then
 
         # Update config
         if [ "$TYPE" == "Lan Interface" ]; then
-            DEVICE=$(jq --raw-output ".rf[$i].device" $CONFIG_PATH)
+            SERIAL=$(jq --raw-output ".rf[$i].serial" $CONFIG_PATH)
+            KEY=$(jq --raw-output ".rf[$i].key" $CONFIG_PATH)
             (
                 echo "[Interface $1]"
                 echo "Type = Lan Interface"
