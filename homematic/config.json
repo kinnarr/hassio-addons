@@ -1,6 +1,6 @@
 {
   "name": "HomeMatic OCCU (Lan Gateway support)",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "slug": "homematic",
   "description": "HomeMatic central based on OCCU",
   "url": "https://github.com/kinnarr/hassio-addons/tree/master/homematic",
@@ -20,7 +20,8 @@
       {
         "type": "Lan Interface",
         "serial": "xy",
-        "key": "abc"
+        "key": "abc",
+        "ip": "192.168.0.0"
       }
     ],
     "wired_enable": false,
@@ -38,7 +39,8 @@
       {
         "type": "match(Lan Interface)",
         "serial": "str",
-        "key": "str"
+        "key": "str",
+        "ip": "str"
       }
     ],
     "wired_enable": "bool",

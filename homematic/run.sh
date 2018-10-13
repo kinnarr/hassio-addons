@@ -21,11 +21,13 @@ if [ "$RF_ENABLE" == "true" ]; then
         if [ "$TYPE" == "Lan Interface" ]; then
             SERIAL=$(jq --raw-output ".rf[$i].serial" $CONFIG_PATH)
             KEY=$(jq --raw-output ".rf[$i].key" $CONFIG_PATH)
+            IP=$(jq --raw-output ".rf[$i].ip" $CONFIG_PATH)
             (
                 echo "[Interface $1]"
                 echo "Type = Lan Interface"
                 echo "Serial Number = $SERIAL"
                 echo "Encryption Key = $KEY"
+                echo "IP Address = $IP"
             ) >> /etc/config/rfd.conf
         fi
     done
