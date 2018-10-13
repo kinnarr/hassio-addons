@@ -1,6 +1,6 @@
 {
   "name": "HomeMatic OCCU (Lan Gateway support)",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "slug": "homematic",
   "description": "HomeMatic central based on OCCU",
   "url": "https://github.com/kinnarr/hassio-addons/tree/master/homematic",
